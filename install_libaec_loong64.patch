@@ -1,0 +1,14 @@
+diff --git a/install_libaec.sh b/install_libaec.sh
+index bb4dbb1..dc939b8 100644
+--- a/install_libaec.sh
++++ b/install_libaec.sh
+@@ -13,6 +13,9 @@ tar zxf libaec-$aec_version.tar.gz
+ 
+ echo "Building & installing libaec"
+ pushd libaec-$aec_version
++rm -f config/config.sub config/config.guess
++curl -fsSL -o config/config.sub 'https://github.com/cgitmirror/config/raw/refs/heads/master/config.sub'
++curl -fsSL -o config/config.guess 'https://github.com/cgitmirror/config/raw/refs/heads/master/config.guess'
+ ./configure
+ make
+ make install

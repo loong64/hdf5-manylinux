@@ -1,0 +1,15 @@
+diff --git a/install_hdf5.sh b/install_hdf5.sh
+index 81c6a1d..be12d03 100644
+--- a/install_hdf5.sh
++++ b/install_hdf5.sh
+@@ -15,6 +15,10 @@ tar -xzvf $HDF5_TAG.tar.gz
+ pushd hdf5-$HDF5_TAG
+ chmod u+x autogen.sh
+ 
++rm -f bin/config.sub bin/config.guess
++curl -fsSL -o bin/config.sub 'https://github.com/cgitmirror/config/raw/refs/heads/master/config.sub'
++curl -fsSL -o bin/config.guess 'https://github.com/cgitmirror/config/raw/refs/heads/master/config.guess'
++
+ echo "Configuring, building & installing HDF5 ${HDF5_VERSION} to ${HDF5_DIR}"
+ ./configure --prefix $HDF5_DIR --enable-build-mode=production --with-szlib
+ make -j $(nproc)
