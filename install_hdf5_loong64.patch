@@ -1,8 +1,8 @@
 diff --git a/install_hdf5.sh b/install_hdf5.sh
-index 81c6a1d..be12d03 100644
+index 7b098e2..8a6dc80 100644
 --- a/install_hdf5.sh
 +++ b/install_hdf5.sh
-@@ -15,6 +15,10 @@ tar -xzvf $HDF5_TAG.tar.gz
+@@ -26,6 +26,10 @@ tar -xzvf $HDF5_TAG.tar.gz
  pushd hdf5-$HDF5_TAG
  chmod u+x autogen.sh
  
